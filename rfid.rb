@@ -10,9 +10,10 @@ class RfidReader
    parity = SerialPort::NONE
    @sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
    @key_parts = []
-   @key_limit = 16 # number of slots in the RFID card.
+   @key_limit = 16
+    # key_limit is dependent upon the number of slots in the RFID card, change as needed
    while true do
-     main
+     execute
    end
    @sp.close
  end
@@ -28,7 +29,7 @@ class RfidReader
    end
  end
 
- def main
+ def execute
    if key_detected?
      puts self.key
    end
