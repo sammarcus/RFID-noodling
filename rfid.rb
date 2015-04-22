@@ -10,8 +10,8 @@ class RfidReader
    parity = SerialPort::NONE
    @sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
    @key_parts = []
-   @key_limit = 16
-    # key_limit is dependent upon the number of slots in the RFID card, change as needed
+   @key_limit = 12
+    # key_limit is dependent upon the number of slots in the RFID card, change as needed. 16// always keep as integer
    while true do
      execute
    end
